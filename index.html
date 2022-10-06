@@ -38,22 +38,55 @@
         margin: 5px;
         border-radius: 10px;
     }
-
+    .Types{
+        text-align: center;
+        background-color: rgb(89,110,152);
+        padding: 5px;
+        margin: 5px;
+        border-radius: 10px;
+    }
     .i{
         text-align: left;
         margin: 5px;
     }
+    .ii{
+        text-align: left;
+        margin: 5px;
+    }
+    .example1{
+        font-family: 'Courier New', Courier, monospace;
+        color:aquamarine;
+        background-color: gray;
+        border: solid 2px black;
+        margin-top: 5px;
+        padding: 5px;
+        height: 25px;
+    }
+    .example2{
+        font-family: 'Courier New', Courier, monospace;
+        color:aquamarine;
+        background-color: gray;
+        border: solid 2px black;
+        margin-top: 5px;
+        padding: 5px;
+        height: 50px;
+    }
 </style>
 <body>
+    <!--Main division that holds sections of the tutorial-->
     <div class="container">
         <h1>Typescript for JavaScript Programmers</h1>
+        <!--Container for Introduction to typescript-->
         <div class="mainContainer">
             <h3>Introduction to Typescript</h3>
-            <div class="intro">TypeScript stands in an unusual relationship to JavaScript.
-                This means that your existing working JavaScript code is also TypeScript 
-                code. The main benefit of TypeScript is that it can highlight unexpected
-                behavior in your code, lowering the chance of bugs.
-                This tutorial provides a brief overview of TypeScript, focusing on its type system.
+            <div class="intro">
+                <p>TypeScript stands in an unusual relationship to JavaScript.</p>
+                <p>For example, JavaScript provides language primitives like string and number,
+                    but it doesn’t check that you’ve consistently assigned these. TypeScript does.</p>
+                <p>This means that your existing working JavaScript code is also TypeScript 
+                    code. The main benefit of TypeScript is that it can highlight unexpected
+                    behavior in your code, lowering the chance of bugs.</p>
+                <p>This tutorial provides a brief overview of TypeScript, focusing on its type system.</p>
             </div>
         </div>
         <div class="Inference">
@@ -61,10 +94,16 @@
             <div class="i">TypeScript knows the JavaScript language and will generate types for you in many cases.
                 For example in creating a variable and assigning it to a particular value, TypeScript will
                 use the value as its type.
+                <div class="example1">let helloWorld = "Hello World";</div>
+                <p>let helloWorld: String</p>
             </div>
         </div>
         <div class="Types">
-
+            <h3>Defining Types</h3>
+            <div class="ii">
+                <p>You can use a variety of design patters in JavaScript.</p>
+                <div class="example2"></div>
+            </div> 
         </div>
         <div class="Composing">
 
