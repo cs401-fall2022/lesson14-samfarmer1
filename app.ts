@@ -9,15 +9,15 @@
 /**
  * turns demo red
  */
- function turnRed() {
+ function turnGreen() {
     if(document != null){
         let c = document.getElementById("demo").style.color;
-        if(c === 'red'){
+        if(c === 'green'){
             document.getElementById("demo").style.color = "black";
         }else{
-            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.color = "green";
         }
     }    
 }
 
-export {hello, turnRed}
+export {hello, turnGreen}

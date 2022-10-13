@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Typescript Tutorial</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,6 +110,11 @@
 
         </div>
     </div>
+    <h1 id="demo" onclick="turnGreen()">Click ME!</h1>
+    <script type="module">
+        import {turnGreen} from '/build/app.js'
+        window.turnGreen = turnGreen;
+    </script>
 
 </body>
 
