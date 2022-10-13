@@ -18,9 +18,13 @@
     .container {
         text-align: center;
     }
+    
+    .h3{
+        text-align: center;
+    }
 
     .mainContainer{
-        text-align: center;
+        text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
         margin: 5px;
@@ -33,45 +37,27 @@
     }
 
     .Inference{
-        text-align: center;
+        text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
         margin: 5px;
         border-radius: 10px;
     }
     .Types{
-        text-align: center;
+        text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
         margin: 5px;
         border-radius: 10px;
     }
-    .i{
+    .Event_Handling{
         text-align: left;
-        margin: 5px;
-    }
-    .ii{
-        text-align: left;
-        margin: 5px;
-    }
-    .example1{
-        font-family: 'Courier New', Courier, monospace;
-        color:aquamarine;
-        background-color: gray;
-        border: solid 2px black;
-        margin-top: 5px;
+        background-color: rgb(89,110,152);
         padding: 5px;
-        height: 25px;
+        margin: 5px;
+        border-radius: 10px;
     }
-    .example2{
-        font-family: 'Courier New', Courier, monospace;
-        color:aquamarine;
-        background-color: gray;
-        border: solid 2px black;
-        margin-top: 5px;
-        padding: 5px;
-        height: 50px;
-    }
+
 </style>
 <body>
     <!--Main division that holds sections of the tutorial-->
@@ -79,43 +65,69 @@
         <h1>Typescript for JavaScript Programmers</h1>
         <!--Container for Introduction to typescript-->
         <div class="mainContainer">
-            <h3>Introduction to Typescript</h3>
-            <div class="intro">
-                <p>TypeScript stands in an unusual relationship to JavaScript.</p>
-                <p>For example, JavaScript provides language primitives like string and number,
-                    but it doesn’t check that you’ve consistently assigned these. TypeScript does.</p>
-                <p>This means that your existing working JavaScript code is also TypeScript 
-                    code. The main benefit of TypeScript is that it can highlight unexpected
-                    behavior in your code, lowering the chance of bugs.</p>
-                <p>This tutorial provides a brief overview of TypeScript, focusing on its type system.</p>
-            </div>
+            <h3 class="h3">Introduction to Typescript</h3>
+            <p>TypeScript stands in an unusual relationship to JavaScript.</p>
+            <p>For example, JavaScript provides language primitives like string and number,
+                but it doesn’t check that you’ve consistently assigned these. TypeScript does.</p>
+            <p>This means that your existing working JavaScript code is also TypeScript 
+                code. The main benefit of TypeScript is that it can highlight unexpected
+                behavior in your code, lowering the chance of bugs.</p>
+            <p>This tutorial provides a brief overview of TypeScript, focusing on its type system.</p>
         </div>
         <div class="Inference">
-            <h3>Types by Inference</h3>
-            <div class="i">TypeScript knows the JavaScript language and will generate types for you in many cases.
+            <h3 class="h3">Types by Inference</h3>
+            <p>TypeScript knows the JavaScript language and will generate types for you in many cases.
                 For example in creating a variable and assigning it to a particular value, TypeScript will
-                use the value as its type.
-                <div class="example1">let helloWorld = "Hello World";</div>
-                <p>let helloWorld: String</p>
-            </div>
+                use the value as its type.</p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    let helloWorld = "Hello World";
+                </code>
+            </pre>
+            <p>let helloWorld: String</p>
         </div>
         <div class="Types">
-            <h3>Defining Types</h3>
-            <div class="ii">
-                <p>You can use a variety of design patters in JavaScript.</p>
-                <div class="example2"></div>
-            </div> 
+            <h3 class="h3">Defining Types</h3>
+            <p>You can use a variety of design patters in JavaScript.</p>
+            <div class="example2"></div>
         </div>
         <div class="Composing">
 
         </div>
+        <div class="Event_Handling">
+            <h3 class="h3">Event Handling</h3>
+            <p>
+                An event is an action, usually cause by the user,
+                that the web browser responds to. The code that is
+                executed because of an event is called an event handler
+                or event listener.
+            </p>
+            <p>
+                The following text below is a result of using an event handler. Once you
+                click on the text, the page will respond by turning the text green.
+                As seen in the example below, if you click again it will turn black.
+            </p>
+            <h1 id="demo" onclick="turnGreen()">Click ME!</h1>
+            <script type="module">
+                import {turnGreen} from '/build/app.js'
+                window.turnGreen = turnGreen;
+            </script>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    function turnGreen() {
+                        if(document != null){
+                            let c = document.getElementById("demo").style.color;
+                            if(c === 'green'){
+                                document.getElementById("demo").style.color = "black";
+                            }else{
+                                document.getElementById("demo").style.color = "green";
+                            }
+                        }    
+                    }
+                </code>
+            </pre>
+        </div>
     </div>
-    <h1 id="demo" onclick="turnGreen()">Click ME!</h1>
-    <script type="module">
-        import {turnGreen} from '/build/app.js'
-        window.turnGreen = turnGreen;
-    </script>
-
 </body>
 
 </html>
