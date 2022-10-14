@@ -182,8 +182,8 @@
             <h1 id="demo" onclick="turnGreen()">Click ME!</h1>
             <script type="module">
                 import {turnGreen} from '/build/app.js'
-                document.addEventListener('click', turnGreen());
                 window.turnGreen = turnGreen;
+                document.turnGreen = turnGreen;
             </script>
             <pre class="highlight">
                 <code class="language-typescript">
