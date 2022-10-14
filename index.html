@@ -64,7 +64,14 @@
         margin: 5px;
         border-radius: 10px;
     }
+    .highlight{
+        text-align: left;
+        background-color: black;
+    }
 
+    code{
+        text-align: left;
+    }
 </style>
 <body>
     <!--Main division that holds sections of the tutorial-->
@@ -95,11 +102,50 @@
         </div>
         <div class="Types">
             <h3 class="h3">Defining Types</h3>
-            <p>You can use a variety of design patters in JavaScript.</p>
+            <p>You can use a variety of design patterns in JavaScript.</p>
+            <p>
+                To cover these cases, TypeScript supports an extension of the JavaScript
+                language, which offers places for you to tell TypeScript what the types should be.
+            </p>
+            <p>The inferred types for the following variables are <code>name: string</code> and <code>id: number</code>.</p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    const user = {
+                        name: "Sam",
+                        id: 0,
+                      };
+                </code>
+            </pre>
+            <p>You can explicitly describe this object’s shape using an interface declaration:</p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    interface User {
+                        name: string;
+                        id: number;
+                      }
+                </code>
+            </pre>
+            <p>
+                You can then declare that a JavaScript object conforms to the shape of your new 
+                interface by using syntax like : TypeName after a variable declaration:
+            </p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    const user: User = {
+                        name: "Hayes",
+                        id: 0,
+                      };
+                </code>
+            </pre>
             <div class="example2"></div>
         </div>
         <div class="Composing">
-
+            <h3 class="h3">Composing Types</h3>
+            <p>
+                With TypeScript, you can create complex types by combining
+                simple ones. There are two popular ways to do so: with unions, 
+                and with generics.
+            </p>
         </div>
         <div class="DOM">
 
