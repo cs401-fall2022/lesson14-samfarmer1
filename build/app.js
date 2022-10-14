@@ -7,7 +7,7 @@ function hello() {
 }
 ;
 /**
- * turns demo green
+ * turns demo red
  */
 function turnGreen() {
     if (document != null) {
