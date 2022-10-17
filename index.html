@@ -63,6 +63,18 @@
         margin: 5px;
         border-radius: 10px;
     }
+    .composing{
+        text-align: left;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 10px;
+    }
+    .structure{
+        text-align: left;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 10px;
+    }
     .DOM{
         text-align: left;
         background-color: rgb(89,110,152);
@@ -76,6 +88,9 @@
     }
 
     code{
+        text-align: left;
+    }
+    .regex{
         text-align: left;
     }
 </style>
@@ -101,7 +116,7 @@
                 use the value as its type.</p>
             <pre class="highlight">
                 <code class="language-typescript">
-                    let helloWorld = "Hello World";
+                    <span style="color: #2D46DF ">let</span> <span style="color: #41ADF1"><data-lsp lsp="let helloWorld: string" style="border-bottom: solid 1px lightgrey;">helloWorld</data-lsp></span> = <span style="color: #FFB433">"Hello World";</span>
                 </code>
             </pre>
             <p>let helloWorld: String</p>
@@ -116,18 +131,18 @@
             <p>The inferred types for the following variables are <code>name: string</code> and <code>id: number</code>.</p>
             <pre class="highlight">
                 <code class="language-typescript">
-                    const user = {
-                        name: "Sam",
-                        id: 0,
-                      };
+                    <span style="color: #2D46DF ">const</span> <span style="color: #41ADF1">user</span> = {
+                        <span style="color: #989DD6">name:</span> <span style="color: #FFB433">"Sam"</span>,
+                        <span style="color: #989DD6">id:</span> <span style="color: #62E74B">0</span>,
+                      }
                 </code>
             </pre>
             <p>You can explicitly describe this object’s shape using an interface declaration:</p>
             <pre class="highlight">
                 <code class="language-typescript">
-                    interface User {
-                        name: string;
-                        id: number;
+                    <span style="color: #2D46DF ">interface</span> <span style="color: #53A5B9">User</span> {
+                        <span style="color: #989DD6">name:</span> <span style="color: #53A5B9">string</span>;
+                        <span style="color: #989DD6">id:</span> <span style="color: #53A5B9">number</span>;
                       }
                 </code>
             </pre>
@@ -137,21 +152,63 @@
             </p>
             <pre class="highlight">
                 <code class="language-typescript">
-                    const user: User = {
-                        name: "Hayes",
-                        id: 0,
-                      };
+                    <span style="color: #2D46DF ">const</span> <span style="color: #41ADF1">user:</span> <span style="color: #53A5B9">User</span> = {
+                        <span style="color: #989DD6">name:</span> <span style="color: #FFB433">"Hayes"</span>,
+                        <span style="color: #989DD6">id:</span> <span style="color: #62E74B">0</span>,
+                      }
                 </code>
             </pre>
-            <div class="example2"></div>
-        </div>
-        <div class="Composing">
-            <h3 class="h3">Composing Types</h3>
+            <p>Typescript will also warn you if you do not follow the conventions of your set interface.</p>
+            <p>Like JavaScript, Typescript also supports object-oriented programming:</p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    <span style="color: #2D46DF ">interface</span> <span style="color: #53A5B9">User</span> = {
+                        <span style="color: #989DD6">name:</span> <span style="color: #53A5B9">string</span>;
+                        <span style="color: #989DD6">id:</span> <span style="color: #53A5B9">number</span>;
+                      }
+
+                      <span style="color: #2D46DF ">class</span> <span style="color: #53A5B9">UserAccount</span> = {
+                        <span style="color: #989DD6">name:</span> <span style="color: #53A5B9">string</span>;
+                        <span style="color: #989DD6">id:</span> <span style="color: #53A5B9">number</span>;
+
+                        <span style="color: #2D46DF ">constructor</span>(<span style="color: #989DD6">name:</span> <span style="color: #53A5B9">string</span>, <span style="color: #989DD6">id:</span> <span style="color: #53A5B9">number</span>){
+                            <span style="color: #2D46DF ">this</span>.name = name;
+                            <span style="color: #2D46DF ">this</span>.id = id;
+                          }
+
+                      }
+
+                      <span style="color: #2D46DF">const</span> user: User = new UserAccount(<span style="color: #FFB433">"Madison"</span>, <span style="color: #62E74B">1</span>);
+                </code>
+            </pre>
             <p>
-                With TypeScript, you can create complex types by combining
-                simple ones. There are two popular ways to do so: with unions, 
-                and with generics.
+                Typescript has the following primitive types from JavaScript: boolean, number, bigint, symbol, string, and null. 
+                It also adds a few more more such as any(anything), unknown(ensure someone using this type declares what the type is),
+                never(it’s not possible that this type could happen), and void(a function which returns undefined or has no return value). 
             </p>
+        </div>
+        <div class="composing">
+            <h3>Composing Types</h3>
+            <p>
+                In Typescript, you can also create your own complex types. You can do this using generics or unions.
+            </p>
+            <p>
+                Generics: Generics provide variables to types. A common example is an array. An array without generics could 
+                contain anything. An array with generics can describe the values that the array contains.
+            </p>
+            <p>
+                Unions: With a union, you can declare that a type could be one of many types. For example, you can describe a 
+                boolean type as being either true or false:
+            </p>
+        </div>
+        <div class="structure">
+            <h3 class="h3">Structural Type System</h3>
+            <p>
+                One of TypeScript’s core principles is that type checking focuses on the shape that values have.
+                This is sometimes called “duck typing” or “structural typing”.
+            </p>
+            <p>In a structural type system, if two objects have the same shape, they are considered to be of the same type.</p>
+
         </div>
         <div class="DOM">
             <h3 class="h3">Document Object Model</h3>
@@ -210,6 +267,57 @@
                     }
                 </code>
             </pre>
+        </div>
+        <div class="regex">
+            <h3 class="h3">Regular Expressions</h3>
+            <p>
+                Programs will often need to recognize patterns in data and a way to recognize
+                a pattern within strings is using regular expressions. A regular expression is
+                a string pattern that is matched against a string.
+            </p>
+            <p>For example, you can use a regex expression to find if the following string has the
+                set pattern "abc". In code this could be declared with 
+                <code>let re = new RegExp("abc");</code> or <code>let re = /abc/;</code> and your string
+                could be tested using <code>test(str);</code>.
+            </p>
+            <table>
+                <caption>Regex Patterns</caption>
+                <tr>
+                    <th>Pattern</th>
+                    <th>Definition</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Match the preceding character 0 or more times.</td>
+                    <td>/ab*c/: "abc", "abbbbc", and "ac".</td>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Match the preceding character 1 or more times.</td>
+                    <td>/ab+c/: "abc" and "abbbbc", NOT "ac".</td>
+                </tr>
+                <tr>
+                    <td>?</td>
+                    <td>Match the preceding character 0 or 1 time.</td>
+                    <td>/ab?c/: "abc" and "ac", NOT "abbbbc".</td>
+                </tr>
+                <tr>
+                    <td>^</td>
+                    <td>Match at the beginning.</td>
+                    <td>/^ab/: "abc", NOT "cab".</td>
+                </tr>
+                <tr>
+                    <td>$</td>
+                    <td>Match at the end.</td>
+                    <td>/ab$/: "cab", NOT "abc".</td>
+                </tr>
+                <tr>
+                    <td>|</td>
+                    <td>Match the string on the right or the left.</td>
+                    <td>/ab|cd/: "abc" and "bcd"</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
