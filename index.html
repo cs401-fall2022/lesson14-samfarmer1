@@ -14,6 +14,11 @@
         font-family:Arial, Helvetica, sans-serif;
         color: white;
     }
+    table{
+        width: 100%;
+        background-color: rgb(26, 30, 35);
+        box-shadow: 0 2px 2px #dddddd, 0px 0px 5px #dddddd
+    }
 
     .container {
         text-align: center;
@@ -59,18 +64,21 @@
     }
     .Scope{
         text-align: left;
+        background-color: rgb(89,110,152);
         padding: 5px;
         margin: 5px;
         border-radius: 10px;
     }
     .composing{
         text-align: left;
+        background-color: rgb(89,110,152);
         padding: 5px;
         margin: 5px;
         border-radius: 10px;
     }
     .structure{
         text-align: left;
+        background-color: rgb(89,110,152);
         padding: 5px;
         margin: 5px;
         border-radius: 10px;
@@ -172,13 +180,13 @@
                         <span style="color: #989DD6">id:</span> <span style="color: #53A5B9">number</span>;
 
                         <span style="color: #2D46DF ">constructor</span>(<span style="color: #989DD6">name:</span> <span style="color: #53A5B9">string</span>, <span style="color: #989DD6">id:</span> <span style="color: #53A5B9">number</span>){
-                            <span style="color: #2D46DF ">this</span>.name = name;
-                            <span style="color: #2D46DF ">this</span>.id = id;
+                            <span style="color: #2D46DF ">this</span>.<span style="color: #989DD6">name</span> = <span style="color: #989DD6">name</span>;
+                            <span style="color: #2D46DF ">this</span>.<span style="color: #989DD6">id</span> = <span style="color: #989DD6">id</span>;
                           }
 
                       }
 
-                      <span style="color: #2D46DF">const</span> user: User = new UserAccount(<span style="color: #FFB433">"Madison"</span>, <span style="color: #62E74B">1</span>);
+                      <span style="color: #2D46DF">const</span> <span style="color: #41ADF1">user</span>: <span style="color: #53A5B9">User</span> = <span style="color: #2D46DF ">new</span> <span style="color: yellow">UserAccount</span>(<span style="color: #FFB433">"Madison"</span>, <span style="color: #62E74B">1</span>);
                 </code>
             </pre>
             <p>
@@ -188,7 +196,7 @@
             </p>
         </div>
         <div class="composing">
-            <h3>Composing Types</h3>
+            <h3 class="h3">Composing Types</h3>
             <p>
                 In Typescript, you can also create your own complex types. You can do this using generics or unions.
             </p>
@@ -196,9 +204,36 @@
                 Generics: Generics provide variables to types. A common example is an array. An array without generics could 
                 contain anything. An array with generics can describe the values that the array contains.
             </p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    <span style="color: #2D46DF ">type</span> <span style="color:#53A5B9">StringArray</span> = <span style="color: #53A5B9">Array</span><<span style="color: #53A5B9">string</span>>;
+                    <span style="color: #2D46DF ">type</span> <span style="color:#53A5B9">NumberArray</span> = <span style="color: #53A5B9">Array</span><<span style="color: #53A5B9">number</span>>;
+                    <span style="color: #2D46DF ">type</span> <span style="color:#53A5B9">ObjectWithNameArray</span> = <span style="color: #53A5B9">Array</span><{ <span style="color: #989898">name</span>: <span style="color: #53A5B9">string</span> }>;
+                </code>
+            </pre>
+            <p>Here is an example of declaring types that use generics:</p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    <span style="color: #2D46DF ">interface</span> <span style="color: #53A5B9">Backpack</span> <<span style="color: #53A5B9">Type</span>> {
+                        <span style="color: yellow">add</span>: (<span style="color: #989DD6">obj</span>: <span style="color: #53A5B9">Type</span>) <span style="color: #989DD6">=></span> <span style="color: #53A5B9">void</span>;
+                        <span style="color: yellow">get</span>: () <span style="color: #989DD6">=></span> <span style="color: #53A5B9">Type</span>;
+                      }
+                    <span style="color:#2D46DF">declare const</span> <span style="color:#41ADF1">backpack</span>: <span style="color: #53A5B9">Backpack</span><<span style="color: #53A5B9">string</span>>;
+                </code>
+            </pre>
             <p>
                 Unions: With a union, you can declare that a type could be one of many types. For example, you can describe a 
                 boolean type as being either true or false:
+            </p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    <span style="color: #2D46DF ">type</span> <span style="color:#53A5B9">MyBool</span> = <span style="color: #53A5B9">true</span> | <span style="color: #53A5B9">false</span>>;
+                </code>
+            </pre>
+            <p>
+                Special tool: to learn the type of a variable, use <span style="background: gray">typeof</span>:
+                Say you have <code>let s = "hello"</code> and you create an if statement such as: <code>if(typeof s === "string")</code> 
+                this result should be true.
             </p>
         </div>
         <div class="structure">
