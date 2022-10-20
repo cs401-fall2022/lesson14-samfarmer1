@@ -1,5 +1,5 @@
 import {describe, expect, test} from '@jest/globals';
-import {hello} from '../app';
+import {hello} from '../helloWorld';
 
 describe('sum module', () => {
   test('returns the string hello', () => {

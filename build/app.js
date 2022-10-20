@@ -1,14 +1,8 @@
 "use strict";
 var change = document.getElementById("demo");
-change.addEventListener("click", turnGreen);
-/**
- * This returns the string hello
- * @returns the String hello
- */
-function hello() {
-    return "Hello World";
+if (change != null) {
+    change.addEventListener("click", turnGreen);
 }
-;
 /**
  * turns demo green
  */
@@ -23,5 +17,4 @@ function turnGreen() {
         }
     }
 }
-export { hello, turnGreen };
 //# sourceMappingURL=app.js.map
