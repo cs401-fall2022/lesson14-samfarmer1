@@ -243,7 +243,24 @@
                 This is sometimes called “duck typing” or “structural typing”.
             </p>
             <p>In a structural type system, if two objects have the same shape, they are considered to be of the same type.</p>
+            <pre class="highlight">
+                <code class="language-typescript">
+                    <span style="color: #2D46DF ">interface</span> <span style="color: #53A5B9">Point</span> {
+                        <span style="color: #989DD6">x</span>: <span style="color: #53A5B9">number</span>;
+                        <span style="color: #989DD6">y</span>: <span style="color: #53A5B9">number</span>;
+                      }
+                    <span style="color:#2D46DF">function</span> <span style="color:yellow">logPoint</span>(<span style="color: #53A5B9">p</span>: <span style="color: #53A5B9">Point</span>) {
+                        <span style="color: #989DD6">console</span>.<span style="color: yellow">log</span>(`<span style="color: #989DD6">${p,x}</span>, <span style="color: #989DD6">${p,x}</span>`);  
+                    }
+                    
+                    const point = { x: 12, y: 26};
+                    logPoint(point);
+                </code>
+            </pre>
+            <p>Looking above, you can see that since <span style="background-color: gray">point</span> is the same shape as the <span style="background-color:gray">Point</span> type, it inherits the same properties.
+                The <span style="background-color: gray">point</span> variable never has to be declared of type <span style="background-color: gray">Point</span>.
 
+            </p>
         </div>
         <div class="DOM">
             <h3 class="h3">Document Object Model</h3>
@@ -252,6 +269,7 @@
                 in a web browser. A DOM Tree is used to represent the data structure, made up of nodes.
                 Nodes are individual objects in a tree and represent the elements that make up the document.
             </p>
+            <img src="img\DOM_tree.png", alt="A DOM Tree">
         </div>
         <div class="Scope">
             <h3 class="h3">Scope</h3>
