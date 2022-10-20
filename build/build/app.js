@@ -13,7 +13,7 @@ function turnGreen() {
     var change = document.getElementById("demo");
     change.addEventListener("click", function () {
         if (document != null) {
-            var c = document.getElementById("event_handling").style.backgroundColor;
+            var c = document.getElementById("demo").style.color;
             if (c === 'green') {
                 document.getElementById("event_handling").style.backgroundColor = "black";
             }
@@ -24,4 +24,5 @@ function turnGreen() {
     });
 }
 export { hello, turnGreen };
+//# sourceMappingURL=app.js.map
 //# sourceMappingURL=app.js.map

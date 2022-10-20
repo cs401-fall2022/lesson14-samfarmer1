@@ -13,7 +13,7 @@
     let change = document.getElementById("demo");
     change.addEventListener("click", function(){
         if(document != null){
-            let c = document.getElementById("demo").style.color;
+            let c = document.getElementById("event_handling").style.backgroundColor;
             if(c === 'green'){
                 document.getElementById("event_handling").style.backgroundColor = "black";
             }else{
