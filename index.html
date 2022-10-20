@@ -286,7 +286,6 @@
             <p>
                 The following text below is a result of using an event handler. Once you
                 click on the text, the page will respond by turning the text green.
-                As seen in the example below, if you click again it will turn black.
             </p>
             <h1 id="demo" onclick="turnGreen()">Click ME!</h1>
             <script type="module">
@@ -294,20 +293,8 @@
                 window.turnGreen = turnGreen;
                 document.turnGreen = turnGreen;
             </script>
-            <pre class="highlight">
-                <code class="language-typescript">
-                    function turnGreen() {
-                        if(document != null){
-                            let c = document.getElementById("demo").style.color;
-                            if(c === 'green'){
-                                document.getElementById("demo").style.color = "black";
-                            }else{
-                                document.getElementById("demo").style.color = "green";
-                            }
-                        }    
-                    }
-                </code>
-            </pre>
+            <p>As seen in the example below, if you click again it will turn black.</p>
+            <img src="img\snap_turnGreen.png", alt="Source code">
         </div>
         <div class="regex" id="regex">
             <h3 class="h3">Regular Expressions</h3>
@@ -318,8 +305,9 @@
             </p>
             <p>For example, you can use a regex expression to find if the following string has the
                 set pattern "abc". In code this could be declared with 
-                <code>let re = new RegExp("abc");</code> or <code>let re = /abc/;</code> and your string
-                could be tested using <code>test(str);</code>.
+                <span style="color:orange"><code>let re = new RegExp("abc");</code></span> or 
+                <span style="color:orange"><code>let re = /abc/;</code></span> and your string
+                could be tested using <span style="color:orange"><code>test(str);</code></span>.
             </p>
             <table>
                 <caption>Regex Patterns</caption>
