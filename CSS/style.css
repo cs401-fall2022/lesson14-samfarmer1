@@ -3,33 +3,90 @@ body {
     font-family:Arial, Helvetica, sans-serif;
     color: white;
 }
+table{
+    width: 100%;
+    background-color: rgb(26, 30, 35);
+    box-shadow: 0 2px 2px #dddddd, 0px 0px 5px #dddddd
+}
+a{
+    color:#FFB433;
+}
 
 .container {
     text-align: center;
 }
 
-.mainContainer{
+.h3{
     text-align: center;
+}
+
+.mainContainer{
+    text-align: left;
     background-color: rgb(89,110,152);
     padding: 5px;
-    margin: 5px;
+    margin: 25px;
     border-radius: 10px;
 }
 
 .intro{
     text-align: left;
-    margin: 5px;
+    margin: 25px;
 }
 
 .Inference{
-    text-align: center;
+    text-align: left;
     background-color: rgb(89,110,152);
     padding: 5px;
-    margin: 5px;
+    margin: 25px;
     border-radius: 10px;
 }
-
-.i{
+.Types{
     text-align: left;
-    margin: 5px;
+    background-color: rgb(89,110,152);
+    padding: 5px;
+    margin: 25px;
+    border-radius: 10px;
+}
+.Event_Handling{
+    text-align: left;
+    background-color: rgb(89,110,152);
+    padding: 5px;
+    margin: 25px;
+    border-radius: 10px;
+}
+.composing{
+    text-align: left;
+    background-color: rgb(89,110,152);
+    padding: 5px;
+    margin: 25px;
+    border-radius: 10px;
+}
+.structure{
+    text-align: left;
+    background-color: rgb(89,110,152);
+    padding: 5px;
+    margin: 25px;
+    border-radius: 10px;
+}
+.DOM{
+    text-align: left;
+    background-color: rgb(89,110,152);
+    padding: 5px;
+    margin: 25px;
+    border-radius: 10px;
+}
+.highlight{
+    text-align: left;
+    background-color: black;
+}
+
+code{
+    text-align: left;
+}
+.regex{
+    text-align: left;
+    background-color: rgb(89,110,152);
+    padding: 5px;
+    margin: 25px;
+    border-radius: 10px;
 }
