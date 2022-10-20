@@ -13,10 +13,10 @@ function turnGreen() {
     if (document != null) {
         var c = document.getElementById("demo").style.color;
         if (c === 'green') {
-            document.getElementById("demo").style.color = "black";
+            document.getElementById("event_handling").style.backgroundColor = "black";
         }
         else {
-            document.getElementById("demo").style.color = "green";
+            document.getElementById("event_handling").style.backgroundColor = "green";
         }
     }
 }
