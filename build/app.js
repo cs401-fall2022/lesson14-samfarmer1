@@ -10,15 +10,18 @@ function hello() {
  * turns demo green
  */
 function turnGreen() {
-    if (document != null) {
-        var c = document.getElementById("demo").style.color;
-        if (c === 'green') {
-            document.getElementById("event_handling").style.backgroundColor = "black";
+    var change = document.getElementById("demo");
+    change.addEventListener("click", function () {
+        if (document != null) {
+            var c = document.getElementById("demo").style.color;
+            if (c === 'green') {
+                document.getElementById("event_handling").style.backgroundColor = "black";
+            }
+            else {
+                document.getElementById("event_handling").style.backgroundColor = "green";
+            }
         }
-        else {
-            document.getElementById("event_handling").style.backgroundColor = "green";
-        }
-    }
+    });
 }
 export { hello, turnGreen };
 //# sourceMappingURL=app.js.map

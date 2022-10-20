@@ -10,14 +10,18 @@
  * turns demo green
  */
  function turnGreen() {
-    if(document != null){
-        let c = document.getElementById("demo").style.color;
-        if(c === 'green'){
-            document.getElementById("event_handling").style.backgroundColor = "black";
-        }else{
-            document.getElementById("event_handling").style.backgroundColor = "green";
-        }
-    }    
+    let change = document.getElementById("demo");
+    change.addEventListener("click", function(){
+        if(document != null){
+            let c = document.getElementById("demo").style.color;
+            if(c === 'green'){
+                document.getElementById("event_handling").style.backgroundColor = "black";
+            }else{
+                document.getElementById("event_handling").style.backgroundColor = "green";
+            }
+            
+        } 
+    });  
 }
 
 export {hello, turnGreen}
