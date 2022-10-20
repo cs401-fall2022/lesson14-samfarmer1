@@ -19,6 +19,9 @@
         background-color: rgb(26, 30, 35);
         box-shadow: 0 2px 2px #dddddd, 0px 0px 5px #dddddd
     }
+    a{
+        color:#FFB433;
+    }
 
     .container {
         text-align: center;
@@ -32,62 +35,55 @@
         text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
-        margin: 5px;
+        margin: 25px;
         border-radius: 10px;
     }
 
     .intro{
         text-align: left;
-        margin: 5px;
+        margin: 25px;
     }
 
     .Inference{
         text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
-        margin: 5px;
+        margin: 25px;
         border-radius: 10px;
     }
     .Types{
         text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
-        margin: 5px;
+        margin: 25px;
         border-radius: 10px;
     }
     .Event_Handling{
         text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
-        margin: 5px;
-        border-radius: 10px;
-    }
-    .Scope{
-        text-align: left;
-        background-color: rgb(89,110,152);
-        padding: 5px;
-        margin: 5px;
+        margin: 25px;
         border-radius: 10px;
     }
     .composing{
         text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
-        margin: 5px;
+        margin: 25px;
         border-radius: 10px;
     }
     .structure{
         text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
-        margin: 5px;
+        margin: 25px;
         border-radius: 10px;
     }
     .DOM{
         text-align: left;
         background-color: rgb(89,110,152);
         padding: 5px;
-        margin: 5px;
+        margin: 25px;
         border-radius: 10px;
     }
     .highlight{
@@ -100,11 +96,19 @@
     }
     .regex{
         text-align: left;
+        background-color: rgb(89,110,152);
+        padding: 5px;
+        margin: 25px;
+        border-radius: 10px;
     }
 </style>
 <body>
     <!--Main division that holds sections of the tutorial-->
     <div class="container">
+        <div>
+            <a href="#inference">Types by Inference</a> | <a href="#types">Defining Types</a> | <a href="#composing">Composing Types</a> | 
+            <a href="#structure">Structural Type System</a> | <a href="#dom">Document Object Model</a> | <a href="#event_handling">Event Handling</a> | <a href="#regex">Regular Expressions</a>
+        </div>
         <h1>Typescript for JavaScript Programmers</h1>
         <!--Container for Introduction to typescript-->
         <div class="mainContainer">
@@ -117,7 +121,7 @@
                 behavior in your code, lowering the chance of bugs.</p>
             <p>This tutorial provides a brief overview of TypeScript, focusing on its type system.</p>
         </div>
-        <div class="Inference">
+        <div class="Inference" id="inference">
             <h3 class="h3">Types by Inference</h3>
             <p>TypeScript knows the JavaScript language and will generate types for you in many cases.
                 For example in creating a variable and assigning it to a particular value, TypeScript will
@@ -130,7 +134,7 @@
             <p>let helloWorld: String</p>
         </div>
         <div class="Types">
-            <h3 class="h3">Defining Types</h3>
+            <h3 class="h3" id="types">Defining Types</h3>
             <p>You can use a variety of design patterns in JavaScript.</p>
             <p>
                 To cover these cases, TypeScript supports an extension of the JavaScript
@@ -195,7 +199,7 @@
                 never(it’s not possible that this type could happen), and void(a function which returns undefined or has no return value). 
             </p>
         </div>
-        <div class="composing">
+        <div class="composing" id="composing">
             <h3 class="h3">Composing Types</h3>
             <p>
                 In Typescript, you can also create your own complex types. You can do this using generics or unions.
@@ -236,7 +240,7 @@
                 this result should be true.
             </p>
         </div>
-        <div class="structure">
+        <div class="structure" id="structure">
             <h3 class="h3">Structural Type System</h3>
             <p>
                 One of TypeScript’s core principles is that type checking focuses on the shape that values have.
@@ -262,7 +266,7 @@
 
             </p>
         </div>
-        <div class="DOM">
+        <div class="DOM" id="dom">
             <h3 class="h3">Document Object Model</h3>
             <p>
                 A Document Object Model(DOM) is a data structure corresponding to the HTML displayed
@@ -271,23 +275,7 @@
             </p>
             <img src="img\DOM_tree.png", alt="A DOM Tree">
         </div>
-        <div class="Scope">
-            <h3 class="h3">Scope</h3>
-            <p>
-                A JavaScript variable's scope is the context by which a variable 
-                can be accessed. The keywords <code>let</code> and <code>var</code> 
-                declare variables, but have differing scope. <code>var</code> has 
-                function scope and <code>let</code> has block scope.
-            </p>
-            <p>
-                Another way of determining the scope of a variable is by declaring it in
-                or outside of a function. Declaring a variable in a function would give it
-                local scope, only that function has access to that variable, and any 
-                declared outside a function would be global, all functions have access 
-                to that variable.
-            </p>
-        </div>
-        <div class="Event_Handling">
+        <div class="Event_Handling" id="event_handling">
             <h3 class="h3">Event Handling</h3>
             <p>
                 An event is an action, usually cause by the user,
@@ -321,7 +309,7 @@
                 </code>
             </pre>
         </div>
-        <div class="regex">
+        <div class="regex" id="regex">
             <h3 class="h3">Regular Expressions</h3>
             <p>
                 Programs will often need to recognize patterns in data and a way to recognize
